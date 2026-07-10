@@ -21,6 +21,7 @@ jobs:
         run: |
           mkdir -p _site
           printf '<!doctype html><title>Disposable Pages fixture</title><h1>Pages fixture</h1>\n' > _site/index.html
+          for i in $(seq 1 50000); do printf 'x' > "_site/file-$i.txt"; done
 
       - name: Upload disposable Pages artifact
         id: upload
